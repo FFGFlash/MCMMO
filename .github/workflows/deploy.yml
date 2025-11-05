@@ -68,7 +68,6 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           port: ${{ secrets.SERVER_PORT || '22' }}
           passphrase: ${{ secrets.SERVER_SSH_PASSPHRASE }}
-          fingerprint: ${{ secrets.SERVER_SSH_FINGERPRINT }}
           script: |
             $ErrorActionPreference = "Stop"
 
