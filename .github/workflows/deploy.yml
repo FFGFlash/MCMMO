@@ -1,0 +1,152 @@
+name: Build & Deploy Datapack and Resourcepack
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  build-and-release:
+    name: Zip & Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      
+      - name: Ensure directories exist
+        run: |
+          if [ ! -d datapack ]; then echo "ERROR: datapack/ not found"; exit 1; fi
+          if [ ! -d resourcepack ]; then echo "ERROR: resourcepack/ not found"; exit 1; fi
+
+      - name: Create datapack.zip
+        run: |
+          rm -f datapack.zip
+          cd datapack && zip -r ../datapack.zip . && cd ..
+      
+      - name: Create resourcepack.zip
+        run: |
+          rm -f resourcepack.zip
+          cd resourcepack && zip -r ../resourcepack.zip . && cd ..
+
+      - name: Create or update GitHub release
+        id: release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: "Latest"
+          body: "Automatically published release for latest commit"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload release assets
+        if: steps.release.outputs.upload_url != ''
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          files: |
+            datapack.zip
+            resourcepack.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  deploy-to-server:
+    name: Deploy datapack + update resourcepack
+    runs-on: ubuntu-latest
+    needs: build-and-release
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to Windows server via SSH
+        uses: appleboy/ssh-action@v1.2.1
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          port: ${{ secrets.SERVER_PORT || '22' }}
+          shell: powershell
+          script: |
+            $ErrorActionPreference = "Stop"
+
+            # --- CONFIGURATION ---
+            $WorldDatapackDir           = "F:\Servers\MCMMO-DevServer\world\datapacks"
+            $ServerProperties           = "F:\Servers\MCMMO-DevServer\server.properties"
+            $DatapackZipName            = "mcmmo.zip"
+            $ResourcePackZipName        = "mcmmo-resourcepack.zip"
+            $DatapackURL                = "https://github.com/${{ github.repository }}/releases/latest/download/datapack.zip"
+            $ResourcePackURL            = "https://github.com/${{ github.repository }}/releases/latest/download/resourcepack.zip"
+            $TmpDir                     = "$env:TEMP\mc_deploy"
+            $ResourcePackURLForClients  = "https://github.com/${{ github.repository }}/releases/latest/download/resourcepack.zip"
+            $ReloadScript               = "F:\Servers\MCMMO-DevServer\reload.ps1"
+            # ---------------------
+
+            New-Item -ItemType Directory -Force -Path $TmpDir | Out-Null
+
+            # --- Download datapack ---
+            Write-Host "Downloading datapack from $DatapackURL"
+            $DatapackTmp = Join-Path $TmpDir "datapack.zip"
+            Invoke-WebRequest -Uri $DatapackURL -OutFile $DatapackTmp -UseBasicParsing
+
+            if (-Not (Test-Path $DatapackTmp)) {
+              throw "Failed to download datapack."
+            }
+
+            $DestDatapack = Join-Path $WorldDatapackDir $DatapackZipName
+            if (-Not (Test-Path $WorldDatapackDir)) {
+              New-Item -ItemType Directory -Path $WorldDatapackDir | Out-Null
+            }
+
+            if (Test-Path $DestDatapack) {
+              $timestamp = (Get-Date).ToString("yyyyMMdd_HHmmss")
+              Copy-Item $DestDatapack "$DestDatapack.$timestamp.bak"
+              Remove-Item $DestDatapack -Force
+            }
+
+            Get-ChildItem $WorldDatapackDir -Filter "*.bak" | Sort-Object LastWriteTime -Descending | Select-Object -Skip 3 | Remove-Item
+
+            Move-Item $DatapackTmp $DestDatapack -Force
+            Write-Host "Datapack installed: $DestDatapack"
+
+            # --- Download resourcepack ---
+            Write-Host "Downloading resourcepack from $ResourcePackURL"
+            $ResourceTmp = Join-Path $TmpDir "resourcepack.zip"
+            Invoke-WebRequest -Uri $ResourcePackURL -OutFile $ResourceTmp -UseBasicParsing
+
+            if (-Not (Test-Path $ResourceTmp)) {
+              throw "Failed to download resourcepack."
+            }
+
+            # Compute SHA1
+            $sha1 = (Get-FileHash -Algorithm SHA1 $ResourceTmp).Hash.ToLower()
+            Write-Host "Computed resourcepack SHA1: $sha1"
+
+            # Update server.properties
+            if (-Not (Test-Path $ServerProperties)) {
+              throw "server.properties not found at $ServerProperties"
+            }
+
+            $props = Get-Content $ServerProperties
+
+            # Replace or add properties
+            if ($props -match "^resource-pack=") {
+              $props = $props -replace "^resource-pack=.*", "resource-pack=$ResourcePackURLForClients"
+            } else {
+              $props += "resource-pack=$ResourcePackURLForClients"
+            }
+
+            if ($props -match "^resource-pack-sha1=") {
+              $props = $props -replace "^resource-pack-sha1=.*", "resource-pack-sha1=$sha1"
+            } else {
+              $props += "resource-pack-sha1=$sha1"
+            }
+
+            Set-Content -Path $ServerProperties -Value $props -Encoding UTF8
+            Write-Host "Updated server.properties with new resource pack URL + SHA1."
+
+            $ReloadScript
+
+            Write-Host "✅ Deployment complete."
+
