@@ -1,1 +1,1 @@
-execute as @e[tag=mcmmo.menu_editor,sort=nearest,limit=1] at @s run return function mcmmo:menu/editor/_despawn
+execute as @e[tag=mcmmo.menu_editor,sort=nearest,limit=1] at @s run return run function mcmmo:menu/editor/_despawn
