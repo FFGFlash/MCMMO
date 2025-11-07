@@ -9,5 +9,5 @@ execute if data storage mcmmo:menu Temp.Items[0].components.minecraft:custom_dat
 data modify storage mcmmo:menu Temp.Item.components.minecraft:custom_data.menu_slot set from storage mcmmo:menu Temp.Item.Slot
 
 # Clone the item back into the array once everything is settled
-data modify storage mcmmo:menu Temp.Items[0] set from stroage mcmmo:menu Temp.Item
+data modify storage mcmmo:menu Temp.Items[0] set from storage mcmmo:menu Temp.Item
 return 1
