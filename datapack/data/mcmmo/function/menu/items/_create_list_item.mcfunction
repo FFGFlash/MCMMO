@@ -3,7 +3,7 @@ $summon item ~ ~ ~ { \
   Item: { \
     id: "minecraft:paper", \
     components: { \
-      "minecraft:custom_name": { translate: "mcmmo.menu_editor.list_descriptor", color: "white", italic: 0b }, \
+      "minecraft:custom_name": { translate: "mcmmo.menu_editor.list_descriptor", color: "white", italic: 0b, with: [{ score: { name: "#i", objective: "mcmmo.core" } }] }, \
       "minecraft:item_model": "mcmmo:menu/list_descriptor", \
       "minecraft:custom_data": { list: { score: "$(score)", offset: -1, size: $(size), storage: "$(storage)", path: "$(path)" } } \
     } \
