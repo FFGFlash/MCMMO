@@ -1,4 +1,4 @@
-# Ex. function mcmmo:menu/items/create_list with { size: 21, score: "mcmmo.menu_list", storage: "mcmmo:menu", path: "Menus" }
+# Ex. function mcmmo:menu/items/create_list { size: 21, score: "mcmmo.menu_list", storage: "mcmmo:menu", path: "Menus" }
 
 # 1 <= size <= 25
 $execute unless score 1 mcmmo.core matches ..$(size) run return fail
@@ -18,4 +18,4 @@ $give @s minecraft:arrow[ \
 
 $scoreboard players set #i mcmmo.core $(size)
 scoreboard players remove #i mcmmo.core 1
-$function mcmmo:menu/items/_create_list_item with { size: $(size), score: "$(score)", storage: "$(storage)", path: "$(path)" }
+$function mcmmo:menu/items/_create_list_item { size: $(size), score: "$(score)", storage: "$(storage)", path: "$(path)" }

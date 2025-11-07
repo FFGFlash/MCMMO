@@ -17,5 +17,5 @@ tag @e[tag=mcmmo.init] remove mcmmo.init
 
 # decrement by 1, check >= 0 ? continue loop : return
 scoreboard players remove #i mcmmo.core 1
-$execute if score #i mcmmo.core matches 0.. run return run function mcmmo:menu/items/_create_list_item with { size: $(size), score: "$(score)", storage: "$(storage)", path: "$(path)" }
+$execute if score #i mcmmo.core matches 0.. run return run function mcmmo:menu/items/_create_list_item { size: $(size), score: "$(score)", storage: "$(storage)", path: "$(path)" }
 return 1
