@@ -2,12 +2,11 @@
   "dataPack.mcmmo.description": "MCMMO Data Pack",
   "mcmmo.menu_editor.previous": "Previous Page",
   "mcmmo.menu_editor.next": "Next Page",
-  "mcmmo.menu_editor.go_back": "Go Back",
+  "mcmmo.menu_editor.return": "Go Back",
   "mcmmo.menu_editor.create": "Create a New Menu",
   "mcmmo.menu_editor.icon_placeholder": "Change Icon",
   "mcmmo.menu_editor.delete": "Delete Menu",
   "mcmmo.menu_editor.quit": "Exit to Menu Editor",
-  "mcmmo.menu_editor.title.menu_select": "Select A Menu",
-  "mcmmo.menu_editor.title.menu_settings": "Settings",
-  "mcmmo.menu_editor.title.menu_editor": "Editor"
+  "mcmmo.menu.menu_list": "Select A Menu",
+  "mcmmo.menu.menu_settings": "Settings"
 }
