@@ -1,5 +1,5 @@
 # Spawn a marker to track our menu editor (Only if it's an air block)
-execute anchored eyes position ^ ^ ^2 if block ~ ~ ~ #minecraft:air run summon minecraft:marker ~ ~ ~ {Tags:["mcmmo.init","mcmmo.menu_editor"]}
+execute anchored eyes positioned ^ ^ ^2 if block ~ ~ ~ #minecraft:air run summon minecraft:marker ~ ~ ~ {Tags:["mcmmo.init","mcmmo.menu_editor"]}
 
 # Run the initialization script for our menu editor and store the result
 scoreboard players reset #result mcmmo.core
