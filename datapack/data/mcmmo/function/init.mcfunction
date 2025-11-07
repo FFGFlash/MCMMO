@@ -1,0 +1,1 @@
+scoreboard objectives add mcmmo.core dummy "MCMMO"
