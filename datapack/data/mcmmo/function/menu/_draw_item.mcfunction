@@ -5,6 +5,9 @@ data modify storage mcmmo:menu Temp.Item set from storage mcmmo:menu Temp.Items[
 # Handle list items
 execute if data storage mcmmo:menu Temp.Items[0].components.minecraft:custom_data.list run function mcmmo:menu/processors/list_item with storage mcmmo:menu Temp.Items[0].components.minecraft:custom_data.list
 
+# Handle list paginator items
+execute if data storage mcmmo:menu Temp.Items[0].components.minecraft:custom_data.list_paginator run function mcmmo:menu/processors/list_paginator with storage mcmmo:menu Temp.Items[0].components.minecraft:custom_data.list_paginator
+
 # Finally mark the item as a menu slot
 data modify storage mcmmo:menu Temp.Item.components.minecraft:custom_data.menu_slot set from storage mcmmo:menu Temp.Item.Slot
 
