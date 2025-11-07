@@ -68,6 +68,7 @@ jobs:
           password: ${{ secrets.SERVER_SSH_PASS }}
           port: ${{ secrets.SERVER_PORT || '22' }}
           script: |
+            powershell.exe
             $ErrorActionPreference = "Stop"
 
             # --- CONFIGURATION ---
