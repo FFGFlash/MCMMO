@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "mcmmo:item/right_arrow"
+    "model": "mcmmo:item/menu/left_arrow"
   }
 }

@@ -1,7 +1,7 @@
 {
   "texture_size": [18, 18],
   "textures": {
-    "0": "mcmmo:item/blank"
+    "0": "mcmmo:item/menu/right_arrow"
   },
   "gui_light": "front",
   "elements": [
