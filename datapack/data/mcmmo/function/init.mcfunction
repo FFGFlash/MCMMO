@@ -5,9 +5,11 @@ scoreboard objectives add mcmmo.menu_list dummy "Menu Editor"
 
 # Constants
 scoreboard players set 0 mcmmo.core 0
+scoreboard players set 1 mcmmo.core 1
 scoreboard players set 7 mcmmo.core 7
 scoreboard players set 9 mcmmo.core 9
 scoreboard players set 21 mcmmo.core 21
+scoreboard players set 25 mcmmo.core 25
 
 # Schedule our slow update to run once every second (for non-critical systems)
 schedule function mcmmo:slow_update 1s
