@@ -1,3 +1,5 @@
+say despawning
+
 setblock ~ ~ ~ minecraft:air
 
 function mcmmo:utility/get_owner
