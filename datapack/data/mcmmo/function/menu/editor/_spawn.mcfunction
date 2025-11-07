@@ -24,7 +24,7 @@ scoreboard players set @s mcmmo.menu 0
 scoreboard players set @s mcmmo.menu_editor 0
 
 # Draw the menu
-function mcmmo:menu/editor/draw
+execute at @s run function mcmmo:menu/editor/draw
 
 # Remove the initialize tag to indicate it's been successfully spawned
 tag @s remove mcmmo.init
