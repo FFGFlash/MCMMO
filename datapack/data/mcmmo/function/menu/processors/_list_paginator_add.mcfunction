@@ -1,6 +1,6 @@
 $scoreboard players set #list_size mcmmo.menu $(size)
 
-execute store result score #max_page mcmmo.menu run data get storage $(storage) $(path).Count
+$execute store result score #max_page mcmmo.menu run data get storage $(storage) $(path).Count
 scoreboard players remove #max_page mcmmo.menu 1
 scoreboard players operation #max_page mcmmo.menu /= #list_size mcmmo.menu
 
