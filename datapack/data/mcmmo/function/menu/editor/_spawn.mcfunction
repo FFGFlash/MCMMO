@@ -13,10 +13,18 @@ execute store result score #temp mcmmo.core run function mcmmo:utility/get_facin
 execute unless score #temp mcmmo.core matches 1..4 run return fail
 
 # Set a barrel facing our player
-execute if score #temp mcmmo.core matches 1 at @s run setblock ~ ~ ~ minecraft:barrel[facing=north]
-execute if score #temp mcmmo.core matches 2 at @s run setblock ~ ~ ~ minecraft:barrel[facing=east]
-execute if score #temp mcmmo.core matches 3 at @s run setblock ~ ~ ~ minecraft:barrel[facing=south]
-execute if score #temp mcmmo.core matches 4 at @s run setblock ~ ~ ~ minecraft:barrel[facing=west]
+execute if score #temp mcmmo.core matches 1 at @s run setblock ~ ~ ~ minecraft:barrel[facing=north]{CustomName:{"text":"MENU EDITOR","bold":true,"color":"aqua"}}
+execute if score #temp mcmmo.core matches 2 at @s run setblock ~ ~ ~ minecraft:barrel[facing=east]{CustomName:{"text":"MENU EDITOR","bold":true,"color":"aqua"}}
+execute if score #temp mcmmo.core matches 3 at @s run setblock ~ ~ ~ minecraft:barrel[facing=south]{CustomName:{"text":"MENU EDITOR","bold":true,"color":"aqua"}}
+execute if score #temp mcmmo.core matches 4 at @s run setblock ~ ~ ~ minecraft:barrel[facing=west]{CustomName:{"text":"MENU EDITOR","bold":true,"color":"aqua"}}
+
+# Set the current menu to display
+scoreboard players set @s mcmmo.menu 0
+# Set the current editor page to display (0 = Menu Select, 1 = Menu Settings, 2 = Menu Editor)
+scoreboard players set @s mcmmo.menu_editor 0
+
+# Draw the menu
+function mcmmo:menu/editor/draw
 
 # Remove the initialize tag to indicate it's been successfully spawned
 tag @s remove mcmmo.init
