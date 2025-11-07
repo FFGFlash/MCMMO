@@ -13,10 +13,10 @@ execute store result score #temp mcmmo.core run function mcmmo:utility/get_facin
 execute unless score #temp mcmmo.core matches 1..4 run return fail
 
 # Set a barrel facing our player
-execute if score #temp mcmmo.core matches 1 run setblock ~ ~ ~ minecraft:barrel[facing=north]
-execute if score #temp mcmmo.core matches 2 run setblock ~ ~ ~ minecraft:barrel[facing=east]
-execute if score #temp mcmmo.core matches 3 run setblock ~ ~ ~ minecraft:barrel[facing=south]
-execute if score #temp mcmmo.core matches 4 run setblock ~ ~ ~ minecraft:barrel[facing=west]
+execute if score #temp mcmmo.core matches 1 at @s run setblock ~ ~ ~ minecraft:barrel[facing=north]
+execute if score #temp mcmmo.core matches 2 at @s run setblock ~ ~ ~ minecraft:barrel[facing=east]
+execute if score #temp mcmmo.core matches 3 at @s run setblock ~ ~ ~ minecraft:barrel[facing=south]
+execute if score #temp mcmmo.core matches 4 at @s run setblock ~ ~ ~ minecraft:barrel[facing=west]
 
 # Remove the initialize tag to indicate it's been successfully spawned
 tag @s remove mcmmo.init
