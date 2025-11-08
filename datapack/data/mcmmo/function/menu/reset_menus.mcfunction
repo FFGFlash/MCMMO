@@ -1,4 +1,4 @@
-data modify storage mcmmo:menus {} set value { \
+data merge storage mcmmo:menus { \
   Data: [ \
     { \
       Index: 0, \
