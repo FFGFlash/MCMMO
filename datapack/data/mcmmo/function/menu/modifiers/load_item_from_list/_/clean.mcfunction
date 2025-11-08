@@ -1,14 +1,12 @@
-data modify storage mcmmo:temp Items[0].components merge value { \
-  "!minecraft:custom_name": {}, \
-  "!minecraft:custom_model_data": {}, \
-  "!minecraft:item_model": {}, \
-  "!minecraft:enchantment_glint_override": {}, \
-  "!minecraft:lore": {}, \
-  "!minecraft:tooltip_display": {}, \
-  "!minecraft:tooltip_style": {}, \
-  "!minecraft:trim": {}, \
-  "!minecraft:potion_contents": {}, \
-  "!minecraft:pot_decorations": {}, \
-  "!minecraft:banner_patterns": {}, \
-  "!minecraft:base_color": {}, \
-}
+data remove storage mcmmo:temp Items[0].components.minecraft:custom_name
+data remove storage mcmmo:temp Items[0].components.minecraft:custom_model_data
+data remove storage mcmmo:temp Items[0].components.minecraft:item_model
+data remove storage mcmmo:temp Items[0].components.minecraft:enchantment_glint_override
+data remove storage mcmmo:temp Items[0].components.minecraft:lore
+data remove storage mcmmo:temp Items[0].components.minecraft:tooltip_display
+data remove storage mcmmo:temp Items[0].components.minecraft:tooltip_style
+data remove storage mcmmo:temp Items[0].components.minecraft:trim
+data remove storage mcmmo:temp Items[0].components.minecraft:potion_contents
+data remove storage mcmmo:temp Items[0].components.minecraft:pot_decorations
+data remove storage mcmmo:temp Items[0].components.minecraft:banner_patterns
+data remove storage mcmmo:temp Items[0].components.minecraft:base_color
