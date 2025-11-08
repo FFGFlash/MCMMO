@@ -1,5 +1,5 @@
 # Loop over and apply all modifiers to the current item
-data modify storage mcmmo:temp Modifier set from mcmmo:temp Items[0].components.minecraft:custom_data.menu_modifiers[-1].id
+data modify storage mcmmo:temp Modifier set from storage mcmmo:temp Items[0].components.minecraft:custom_data.menu_modifiers[-1].id
 function mcmmo:menu/_/apply_modifiers/item
 
 # Move the current item to the end of the array

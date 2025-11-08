@@ -1,5 +1,5 @@
 # Apply the modifier
-function mcmmo:menu/_/apply_modifiers/apply_modifier with storage Items[0].components.minecraft:custom_data.menu_modifiers[0]
+function mcmmo:menu/_/apply_modifiers/apply_modifier with storage mcmmo:temp Items[0].components.minecraft:custom_data.menu_modifiers[0]
 
 # Move the current modifier to the end of the array
 data modify storage mcmmo:temp Items[0].components.minecraft:custom_data.menu_modifiers append from storage mcmmo:temp Items[0].components.minecraft:custom_data.menu_modifiers[0]
