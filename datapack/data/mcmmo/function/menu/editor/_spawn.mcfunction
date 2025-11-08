@@ -1,5 +1,5 @@
 # Make the editor look at the player
-tp @s ~ ~ ~ ~ ~
+execute at @s run tp @s ~ ~ ~ ~ ~
 
 # Set the owner of our marker to @p
 scoreboard players reset #temp mcmmo.core
