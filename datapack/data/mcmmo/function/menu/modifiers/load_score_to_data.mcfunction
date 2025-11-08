@@ -1,0 +1,1 @@
+$data modify storage mcmmo:temp Items[0].components.minecraft:custom_data.$(path) $(type) $(scale) run scoreboard players get $(target) $(score)
