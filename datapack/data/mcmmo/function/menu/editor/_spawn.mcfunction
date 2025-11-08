@@ -18,13 +18,15 @@ execute if score #temp mcmmo.core matches 2 at @s run setblock ~ ~ ~ minecraft:b
 execute if score #temp mcmmo.core matches 3 at @s run setblock ~ ~ ~ minecraft:barrel[facing=south]
 execute if score #temp mcmmo.core matches 4 at @s run setblock ~ ~ ~ minecraft:barrel[facing=west]
 
-# Set the current menu to display
+# The default id for the menu_list menu is 0
 scoreboard players set @s mcmmo.menu 0
-# Set the current editor page to display (0 = Menu Select, 1 = Menu Settings, 2 = Menu Editor)
-scoreboard players set @s mcmmo.menu_editor 0
+# Set the menu list page to 0
+scoreboard players set @s mcmmo.menu_list 0
+# Set the editing menu to -1
+scoreboard players set @s mcmmo.menu_editor -1
 
 # Draw the menu
-execute at @s run function mcmmo:menu/editor/draw
+execute at @s run function mcmmo:menu/draw_menu
 
 # Remove the initialize tag to indicate it's been successfully spawned
 tag @s remove mcmmo.init
