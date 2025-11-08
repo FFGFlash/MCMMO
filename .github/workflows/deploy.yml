@@ -75,5 +75,5 @@ jobs:
           server: ${{ secrets.SERVER_HOST }}
           port: ${{ secrets.RCON_PORT }}
           password: ${{ secrets.RCON_PASS }}
-          commands: reload
+          commands: '["reload"]'
 
