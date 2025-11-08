@@ -1,2 +1,0 @@
-$execute if score 0 mcmmo.core matches ..$(dir) run return run function mcmmo:menu/processors/_list_paginator_add { score: "$(score)", storage: "$(storage)", path: "$(path)", size: $(size) }
-$execute if score 0 mcmmo.core matches $(dir).. run return run function mcmmo:menu/processors/_list_paginator_sub { score: "$(score)", storage: "$(storage)", path: "$(path)", size: $(size) }
