@@ -5,3 +5,4 @@ data modify storage mcmmo:temp Items append from storage mcmmo:menus Result.Valu
 
 data modify storage mcmmo:temp Slot set from storage mcmmo:temp Items[-1].Slot
 function mcmmo:menu/_/apply_modifiers/items
+data modify block ~ ~ ~ Items append from storage mcmmo:temp Items
