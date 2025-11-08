@@ -2,6 +2,7 @@ scoreboard objectives add mcmmo.core dummy "MCMMO"
 scoreboard objectives add mcmmo.menu dummy "Menu IDs"
 scoreboard objectives add mcmmo.menu_editor dummy "Menu Editor"
 scoreboard objectives add mcmmo.menu_list dummy "Menu Editor"
+scoreboard objectives add mcmmo.lists dummy "List Data"
 
 # Constants
 scoreboard players set 0 mcmmo.core 0
