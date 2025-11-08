@@ -109,7 +109,12 @@ jobs:
             Move-Item $DatapackTmp $DestDatapack -Force
 
             $ExtractPath = Join-Path $WorldDatapackDir "mcmmo"
-            if (Test-Path $ExtractPath) { Remove-Item $ExtractPath -Recurse -Force }
+            if (Test-Path $ExtractPath) {
+              $DataPath = Join-Path $ExtractPath "data"
+              $PackMeta = Join-Path $ExtractPath "pack.mcmeta"
+              Remove-Item $DataPath -Recurse -Force
+              Remove-Item $PackMeta
+            }
             Expand-Archive -Path $DestDatapack -DestinationPath $ExtractPath -Force
 
             Write-Host "Datapack installed: $DestDatapack"
