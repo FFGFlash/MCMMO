@@ -109,11 +109,11 @@ jobs:
             Move-Item $DatapackTmp $DestDatapack -Force
 
             $ExtractPath = Join-Path $WorldDatapackDir "mcmmo"
-            if (Test-Path $ExtractPath) {
-              $DataPath = Join-Path $ExtractPath "data"
-              $PackMeta = Join-Path $ExtractPath "pack.mcmeta"
+            $DataPath = Join-Path $ExtractPath "data"
+            $PackMeta = Join-Path $ExtractPath "pack.mcmeta"
+            if (Test-Path $DataPath) {
               Remove-Item $DataPath -Recurse -Force
-              Remove-Item $PackMeta
+              Remove-Item $PackMeta -Force
             }
             Expand-Archive -Path $DestDatapack -DestinationPath $ExtractPath -Force
 
