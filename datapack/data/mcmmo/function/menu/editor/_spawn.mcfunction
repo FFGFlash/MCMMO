@@ -1,3 +1,6 @@
+# Make the editor look at the player
+tp @s ~ ~ ~ ~ ~
+
 # Set the owner of our marker to @p
 scoreboard players reset #temp mcmmo.core
 execute store result score #temp mcmmo.core run function mcmmo:utility/set_owner
