@@ -1,0 +1,1 @@
+data modify storage mcmmo:temp Items[0] merge value { id: "minecraft:light_gray_stained_glass_pane", components: {"minecraft:item_model": "mcmmo:menu/empty", "minecraft:tooltip_display": {hide_tooltip: 1b}} }
