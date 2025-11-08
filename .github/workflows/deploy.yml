@@ -107,6 +107,11 @@ jobs:
             Get-ChildItem $WorldDatapackDir -Filter "*.bak" | Sort-Object LastWriteTime -Descending | Select-Object -Skip 3 | Remove-Item
 
             Move-Item $DatapackTmp $DestDatapack -Force
+
+            $ExtractPath = Join-Path $WorldDatapackDir "mcmmo"
+            if (Test-Path $ExtractPath) { Remove-Item $ExtractPath -Recurse -Force }
+            Expand-Archive -Path $DestDatapack -DestinationPath $ExtractPath -Force
+
             Write-Host "Datapack installed: $DestDatapack"
 
             # --- Download resourcepack ---
