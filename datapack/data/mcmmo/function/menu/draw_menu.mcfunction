@@ -1,7 +1,7 @@
 execute store result storage mcmmo:menu Temp.Id int 1 run scoreboard players get @s mcmmo.menu
 
 scoreboard players reset #temp mcmmo.menu
-execute if entity @s[type=minecraft:player] positioned ~ -64 ~ run function mcmmo:menu/_draw_menu_player
+execute if entity @s[type=minecraft:player] positioned 0 -64 0 in minecraft:overworld run function mcmmo:menu/_draw_menu_player
 execute unless entity @s[type=minecraft:player] store result score #temp mcmmo.menu if data block ~ ~ ~ Items run function mcmmo:menu/_draw_menu with storage mcmmo:menu Temp
 
 execute if score #temp mcmmo.menu matches 1.. run return 1

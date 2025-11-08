@@ -10,6 +10,7 @@ $summon item ~ ~ ~ { \
   } \
 }
 
+execute as @e[tag=mcmmo.init,limit=1] run function mcmmo:utility/parse_item_name
 execute as @e[tag=mcmmo.init,limit=1] run function mcmmo:utility/set_owner
 execute store result entity @e[tag=mcmmo.init,limit=1] Item.components.minecraft:custom_data.list.offset int 1 run scoreboard players get #i mcmmo.core
 

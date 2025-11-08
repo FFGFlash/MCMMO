@@ -1,6 +1,3 @@
-setblock ~ ~ ~ minecraft:shulker_box
+data modify block ~ ~ ~ Items set value []
 execute store result score #temp mcmmo.menu run function mcmmo:menu/_draw_menu with storage mcmmo:menu Temp
-
-# TODO: Load shulker into ender chest
-
-setblock ~ ~ ~ minecraft:air
+loot replace entity @s enderchest.0 mine ~ ~ ~ stick[custom_data={drop_contents:1b}]
