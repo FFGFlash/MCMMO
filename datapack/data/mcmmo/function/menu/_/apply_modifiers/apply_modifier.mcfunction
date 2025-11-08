@@ -1,1 +1,1 @@
-$function menu/modifiers/$(type) $(args)
+$function mcmmo:menu/modifiers/$(type) $(args)
