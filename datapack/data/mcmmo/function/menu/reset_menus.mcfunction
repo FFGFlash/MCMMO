@@ -47,7 +47,12 @@ data merge storage mcmmo:menus { \
               { id: 1, type: "load_item_from_list/page", args: { list: "mcmmo:menus", path: ".Item", page: -1, offset: 6, size: 21 } } \
             ] \
           }}}, \
-          {Slot: 9b, id: "minecraft:arrow", components: {"minecraft:custom_name": {translate: "mcmmo.menu_editor.previous", color: "red", italic: 0b}, "minecraft:item_model": "mcmmo:menu/left_arrow", "minecraft:custom_data": {has_component: 1b, list_paginator:{page_score: "mcmmo.menu_list", size: 21, list: "mcmmo:menus", dir: -1}}}}, \
+          {Slot: 9b, id: "minecraft:arrow", components: {"minecraft:custom_name": {translate: "mcmmo.menu_editor.previous", color: "yellow", italic: 0b}, "minecraft:item_model": "mcmmo:menu/left_arrow", "minecraft:custom_data": { \
+            menu_modifiers: [ \
+              { id: 0, type: "if_set_model", args: { condition: "score @s mcmmo.menu_list matches ..0", model: "mcmmo:menu/blank" } } \
+            ], \
+            on_click: { type: "decrement_score", args: { score: "mcmmo.menu_list", target: "@s" } } \
+          }}}, \
           {Slot: 10b, id: "minecraft:paper", components: {"minecraft:custom_name": {translate: "mcmmo.menu_editor.list_descriptor", color: "white", italic: 0b, with: ["7"]}, "minecraft:item_model": "mcmmo:menu/list_descriptor", "minecraft:custom_data": { \
             menu_modifiers: [ \
               { id: 0, type: "load_score_to_data", args: { score: "mcmmo.menu_list", target: "@s", path: "menu_modifiers[{id:1}].args.page", type: "int", scale: 1 } }, \
@@ -90,7 +95,13 @@ data merge storage mcmmo:menus { \
               { id: 1, type: "load_item_from_list/page", args: { list: "mcmmo:menus", path: ".Item", page: -1, offset: 13, size: 21 } } \
             ] \
           }}}, \
-          {Slot: 17b, id: "minecraft:arrow", components: {"minecraft:custom_name": {translate: "mcmmo.menu_editor.next", color: "green", italic: 0b}, "minecraft:item_model": "mcmmo:menu/right_arrow", "minecraft:custom_data": {has_component: 1b, list_paginator:{page_score: "mcmmo.menu_list", size: 21, list: "mcmmo:menus", dir: 1}}}}, \
+          {Slot: 17b, id: "minecraft:arrow", components: {"minecraft:custom_name": {translate: "mcmmo.menu_editor.next", color: "yellow", italic: 0b}, "minecraft:item_model": "mcmmo:menu/right_arrow", "minecraft:custom_data": { \
+            menu_modifiers: [ \
+              { id: 0, type: "calc_max_page", args: { size: 21, list: "mcmmo:menus", score: "mcmmo.menu", target: "#mp" } }, \
+              { id: 1, type: "if_set_model", args: { condition: "score @s mcmmo.menu_list >= #mp mcmmo.menu", model: "mcmmo:menu/blank" } } \
+            ], \
+            on_click: { type: "increment_score", args: { score: "mcmmo.menu_list", target: "@s" } } \
+          }}}, \
           {Slot: 19b, id: "minecraft:paper", components: {"minecraft:custom_name": {translate: "mcmmo.menu_editor.list_descriptor", color: "white", italic: 0b, with: ["14"]}, "minecraft:item_model": "mcmmo:menu/list_descriptor", "minecraft:custom_data": { \
             menu_modifiers: [ \
               { id: 0, type: "load_score_to_data", args: { score: "mcmmo.menu_list", target: "@s", path: "menu_modifiers[{id:1}].args.page", type: "int", scale: 1 } }, \
