@@ -12,5 +12,5 @@ scoreboard players set #t0 mcmmo.menu 0
 execute store success score #t0 mcmmo.menu run data modify storage mcmmo:temp Compare set from storage mcmmo:temp Items[-1].Slot
 
 # Continue the loop if the last element is still not the initial element
-execute if score #t0 matches 1 run return run function mcmmo:menu/_/apply_modifiers/items
+execute if score #t0 mcmmo.menu matches 1 run return run function mcmmo:menu/_/apply_modifiers/items
 return 1

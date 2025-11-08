@@ -11,5 +11,5 @@ scoreboard players set #t0 mcmmo.menu 0
 execute store success score #t0 mcmmo.menu run data modify storage mcmmo:temp Compare set from storage mcmmo:temp Items[0].components.minecraft:custom_data.menu_modifiers[-1].id
 
 # Continue the loop if the last modifier is still not the initial modifier
-execute if score #t0 matches 1 run return run function mcmmo:menu/_/apply_modifiers/item
+execute if score #t0 mcmmo.menu matches 1 run return run function mcmmo:menu/_/apply_modifiers/item
 return 1
