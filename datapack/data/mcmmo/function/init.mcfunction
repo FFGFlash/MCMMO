@@ -13,3 +13,6 @@ scoreboard players set 25 mcmmo.core 25
 
 # Schedule our slow update to run once every second (for non-critical systems)
 schedule function mcmmo:slow_update 1s
+
+setblock 0 -64 0 minecraft:shulker_box
+setblock 0 -63 0 minecraft:oak_sign
