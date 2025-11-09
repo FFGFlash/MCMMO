@@ -1,0 +1,1 @@
+$scoreboard players add $(target) $(score) 1

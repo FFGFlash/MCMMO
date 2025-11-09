@@ -1,0 +1,2 @@
+execute if entity @s[type=minecraft:player] positioned 0 -64 0 in minecraft:overworld run function mcmmo:menu/_/update_player_menu
+execute unless entity @s[type=minecraft:player] run function mcmmo:menu/_/update_container_menu

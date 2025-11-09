@@ -1,0 +1,1 @@
+$data modify storage mcmmo:players Result set from storage mcmmo:players Data[{Value:{UUID:$(UUID)}}]
