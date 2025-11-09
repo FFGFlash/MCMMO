@@ -3,6 +3,7 @@ data merge storage mcmmo:menus { \
     { \
       Index: 0, \
       Value: { \
+        Id: -1, \
         Item: {id: "minecraft:paper", count: 1, components: {"minecraft:custom_name": {translate: "mcmmo.menu.menu_list", color: "yellow", italic: 0b}}}, \
         Items: [ \
           {Slot: 1b, id: "minecraft:paper", components: {"minecraft:custom_name": {translate: "mcmmo.menu_editor.list_descriptor", color: "white", italic: 0b, with: ["0"]}, "minecraft:item_model": "mcmmo:menu/list_descriptor", "minecraft:custom_data": { \
@@ -197,6 +198,7 @@ data merge storage mcmmo:menus { \
     { \
       Index: 1, \
       Value: { \
+        Id: -2, \
         Item: {id: "minecraft:writable_book", count: 1, components: {"minecraft:custom_name": {translate: "mcmmo.menu.menu_settings", color: "yellow", italic: 0b}}}, \
         Items: [ \
           {Slot: 4b, id: "minecraft:paper", components: {"minecraft:custom_name": {translate: "mcmmo.menu_editor.storage_slot", color: "white", italic: 0b}, "minecraft:item_model": "mcmmo:menu/storage_slot", "minecraft:custom_data": { \
@@ -207,7 +209,9 @@ data merge storage mcmmo:menus { \
           }}}, \
           {Slot: 11b, id: "minecraft:tnt", components: {"minecraft:custom_name": {translate: "mcmmo.menu_editor.delete", color: "dark_red", italic: 0b}, "minecraft:item_model": "mcmmo:menu/trash_can"}}, \
           {Slot: 15b, id: "minecraft:writable_book", components: {"minecraft:custom_name": {translate: "mcmmo.menu_editor.edit", color: "green", italic: 0b}, "minecraft:item_model": "mcmmo:menu/pencil"}}, \
-          {Slot: 22b, id: "minecraft:barrier", components: {"minecraft:custom_name": {translate: "mcmmo.menu_editor.return", color: "white", italic: 0b}, "minecraft:item_model": "mcmmo:menu/return_arrow"}} \
+          {Slot: 22b, id: "minecraft:barrier", components: {"minecraft:custom_name": {translate: "mcmmo.menu_editor.return", color: "white", italic: 0b}, "minecraft:item_model": "mcmmo:menu/return_arrow", "minecraft:custom_data": { \
+            on_click: { type: "change_menu", args: { index: 0 } } \
+          }}} \
         ] \
       } \
     } \
