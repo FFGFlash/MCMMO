@@ -1,3 +1,5 @@
+execute unless score @s mcmmo.menu matches 0.. run return fail
+
 scoreboard players set #t0 mcmmo.menu 0
 execute store success score #t0 mcmmo.menu run function mcmmo:menu/fetch_menu
 
