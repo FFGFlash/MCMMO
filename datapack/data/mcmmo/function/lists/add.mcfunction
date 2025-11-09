@@ -10,4 +10,4 @@ $data modify storage $(target) {} merge from storage mcmmo:temp List
 
 function mcmmo:lists/_/cleanup
 
-return run scoreboard players get score result mcmmo.lists
+return run scoreboard players get result mcmmo.lists
