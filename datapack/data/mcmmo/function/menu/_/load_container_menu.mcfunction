@@ -45,4 +45,4 @@ data modify block ~ ~ ~ Items append from storage mcmmo:temp Items[]
 data modify block ~ ~ ~ Items[].minecraft:custom_data.menu_item set value 1b
 
 # Update previous items to prevent on_change from firing
-data modify enity @s data.PreviousItems set from block ~ ~ ~ Items
+data modify entity @s data.PreviousItems set from block ~ ~ ~ Items
