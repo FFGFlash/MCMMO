@@ -42,7 +42,7 @@ function mcmmo:menu/_/apply_modifiers/items
 data modify block ~ ~ ~ Items append from storage mcmmo:temp Items[]
 
 # Register all the items in the menu as menu items (might need to revist how we do this for eventually being able to store things in the menu)
-data modify block ~ ~ ~ Items[].minecraft:custom_data.menu_item set value 1b
+data modify block ~ ~ ~ Items[].components.minecraft:custom_data.menu_item set value 1b
 
 # Update previous items to prevent on_change from firing
 data modify entity @s data.PreviousItems set from block ~ ~ ~ Items

@@ -1,3 +1,5 @@
+say menu changed
+
 execute as @a run function mcmmo:menu/_/get_clicker
 
 data modify storage mcmmo:temp InputItems set from storage mcmmo:temp CurrentItems
