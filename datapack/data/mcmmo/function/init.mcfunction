@@ -18,4 +18,4 @@ schedule function mcmmo:slow_update 1s
 setblock 0 -64 0 minecraft:shulker_box
 setblock 0 -63 0 minecraft:oak_sign
 
-execute unless storage mcmmo:players Data run function mcmmo:player/data/init
+execute unless data storage mcmmo:players Data run function mcmmo:player/data/init
