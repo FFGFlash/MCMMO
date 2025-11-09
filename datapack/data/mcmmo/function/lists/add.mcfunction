@@ -4,11 +4,10 @@ $data modify storage mcmmo:temp List merge from storage $(target)
 $data modify storage mcmmo:temp Value set value $(data)
 
 scoreboard players set result mcmmo.lists 0
-execute store success score result mcmmo.lists run function mcmmo:lists/_/add
+execute store result score result mcmmo.lists run function mcmmo:lists/_/add
 
 $data modify storage $(target) {} merge from storage mcmmo:temp List
 
 function mcmmo:lists/_/cleanup
 
-execute if score result mcmmo.lists matches 0 run return fail
-return 1
+return run scoreboard players get score result mcmmo.lists

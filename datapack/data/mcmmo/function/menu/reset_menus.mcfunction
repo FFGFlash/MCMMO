@@ -191,7 +191,9 @@ data merge storage mcmmo:menus { \
             ], \
             on_click: { type: "edit_menu", args: { page: -1, offset: 20, size: 21 } } \
           }}}, \
-          {Slot: 26b, id: "minecraft:writable_book", components: {"minecraft:custom_name": {translate: "mcmmo.menu_editor.create", color: "green", italic: 0b}, "minecraft:item_model": "mcmmo:menu/plus_sign"}} \
+          {Slot: 26b, id: "minecraft:writable_book", components: {"minecraft:custom_name": {translate: "mcmmo.menu_editor.create", color: "green", italic: 0b}, "minecraft:item_model": "mcmmo:menu/plus_sign", "minecraft:custom_data": { \
+            on_click: { type: "create_menu" } \
+          }}} \
         ] \
       } \
     }, \
