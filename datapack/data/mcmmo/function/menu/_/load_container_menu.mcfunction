@@ -40,3 +40,6 @@ data modify storage mcmmo:temp Items append from storage mcmmo:menus Result.Valu
 data modify storage mcmmo:temp Slot set from storage mcmmo:temp Items[-1].Slot
 function mcmmo:menu/_/apply_modifiers/items
 data modify block ~ ~ ~ Items append from storage mcmmo:temp Items[]
+
+# Register all the items in the menu as menu items (might need to revist how we do this for eventually being able to store things in the menu)
+data modify block ~ ~ ~ Items[].minecraft:custom_data.menu_item set value 1b
