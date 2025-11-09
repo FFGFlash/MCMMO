@@ -1,0 +1,1 @@
+$function mcmmo:menu/callbacks/$(type) $(args)

@@ -1,1 +1,1 @@
-$function mcmmo:menu/callbacks/$(type) $(args)
+$function mcmmo:menu/callbacks/$(type)

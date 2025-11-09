@@ -208,7 +208,9 @@ data merge storage mcmmo:menus { \
             ] \
           }}}, \
           {Slot: 11b, id: "minecraft:tnt", components: {"minecraft:custom_name": {translate: "mcmmo.menu_editor.delete", color: "dark_red", italic: 0b}, "minecraft:item_model": "mcmmo:menu/trash_can"}}, \
-          {Slot: 15b, id: "minecraft:writable_book", components: {"minecraft:custom_name": {translate: "mcmmo.menu_editor.edit", color: "green", italic: 0b}, "minecraft:item_model": "mcmmo:menu/pencil"}}, \
+          {Slot: 15b, id: "minecraft:writable_book", components: {"minecraft:custom_name": {translate: "mcmmo.menu_editor.edit", color: "green", italic: 0b}, "minecraft:item_model": "mcmmo:menu/pencil", "minecraft:custom_data": { \
+            on_click: { type: "open_editor" } \
+          }}}, \
           {Slot: 22b, id: "minecraft:barrier", components: {"minecraft:custom_name": {translate: "mcmmo.menu_editor.return", color: "white", italic: 0b}, "minecraft:item_model": "mcmmo:menu/return_arrow", "minecraft:custom_data": { \
             on_click: { type: "change_menu", args: { index: 0 } } \
           }}} \
