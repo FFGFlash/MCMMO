@@ -49,7 +49,7 @@ data merge storage mcmmo:menus { \
           }}}, \
           {Slot: 9b, id: "minecraft:arrow", components: {"minecraft:custom_name": {translate: "mcmmo.menu_editor.previous", color: "yellow", italic: 0b}, "minecraft:item_model": "mcmmo:menu/left_arrow", "minecraft:custom_data": { \
             menu_modifiers: [ \
-              { id: 0, type: "if_set_component", args: { condition: "score @s mcmmo.menu_list matches ..0", component: "minecraft:item_model", value: "mcmmo:menu/blank" } }, \
+              { id: 0, type: "if_set_component", args: { condition: "score @s mcmmo.menu_list matches ..0", component: "minecraft:item_model", value: "\"mcmmo:menu/blank\"" } }, \
               { id: 1, type: "if_set_component", args: { condition: "score @s mcmmo.menu_list matches ..0", component: "minecraft:tooltip_display", value: "{ hide_tooltip: 1b }" } } \
             ], \
             on_click: { type: "decrement_score", args: { score: "mcmmo.menu_list", target: "@s" } } \
@@ -99,7 +99,7 @@ data merge storage mcmmo:menus { \
           {Slot: 17b, id: "minecraft:arrow", components: {"minecraft:custom_name": {translate: "mcmmo.menu_editor.next", color: "yellow", italic: 0b}, "minecraft:item_model": "mcmmo:menu/right_arrow", "minecraft:custom_data": { \
             menu_modifiers: [ \
               { id: 0, type: "calc_max_page", args: { size: 21, list: "mcmmo:menus", score: "mcmmo.menu", target: "#mp" } }, \
-              { id: 1, type: "if_set_component", args: { condition: "score @s mcmmo.menu_list >= #mp mcmmo.menu", component: "minecraft:item_model", value: "mcmmo:menu/blank" } }, \
+              { id: 1, type: "if_set_component", args: { condition: "score @s mcmmo.menu_list >= #mp mcmmo.menu", component: "minecraft:item_model", value: "\"mcmmo:menu/blank\"" } }, \
               { id: 2, type: "if_set_component", args: { condition: "score @s mcmmo.menu_list >= #mp mcmmo.menu", component: "minecraft:tooltip_display", value: "{ hide_tooltip: 1b }" } } \
             ], \
             on_click: { type: "increment_score", args: { score: "mcmmo.menu_list", target: "@s" } } \
