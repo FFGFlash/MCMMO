@@ -1,3 +1,3 @@
-execute unless entity @s[advancements={mcmmo:a_man_and_his_meat={talk_to_henry=true}}] run return run function mcmmo:npc/henry/dialog/1_0
-execute unless entity @s[advancements={mcmmo:a_man_and_his_meat={gather_meat=true}}] run return run function mcmmo:npc/henry/dialog/1_3
-execute unless entity @s[advancements={mcmmo:a_man_and_his_meat={return_to_henry=true}}] run return run function mcmmo:npc/henry/dialog/1_4
+execute unless entity @s[advancements={mcmmo:firstia/a_man_and_his_meat={talk_to_henry=true}}] run return run function mcmmo:npc/henry/dialog/1_0
+execute unless entity @s[advancements={mcmmo:firstia/a_man_and_his_meat={gather_meat=true}}] run return run function mcmmo:npc/henry/dialog/1_3
+execute unless entity @s[advancements={mcmmo:firstia/a_man_and_his_meat={return_to_henry=true}}] run return run function mcmmo:npc/henry/dialog/1_4
