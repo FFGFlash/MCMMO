@@ -2,7 +2,7 @@
   "parent": "mcmmo:firstia/a_man_and_his_meat",
   "display": {
     "icon": { "id": "minecraft:beef" },
-    "title": { "text": "A Man and His Meat", "color": "green" },
+    "title": { "text": "Sacred Marinade", "color": "green" },
     "description": "Henry wants to recreate an ancient recipe said to \"awaken the flavor of gods.\"\n\nCollect Rosemary of Redemption from the Western Forest, Garlic of Glory from the Old Mines, and Onion of Omens from the Misty Swamp.",
     "announce_to_chat": false
   },
@@ -33,7 +33,14 @@
               "minecraft:custom_data": { "id": "mcmmo:onion_of_omens" }
             }
           }
-        ]
+        ],
+        "player": {
+          "advancements": {
+            "mcmmo:sacred_marinade": {
+              "talk_to_henry": true
+            }
+          }
+        }
       }
     },
     "return_to_henry": { "trigger": "minecraft:impossible" }
