@@ -35,9 +35,12 @@
           }
         ],
         "player": {
-          "advancements": {
-            "mcmmo:sacred_marinade": {
-              "talk_to_henry": true
+          "type_specific": {
+            "type": "minecraft:player",
+            "advancements": {
+              "mcmmo:sacred_marinade": {
+                "talk_to_henry": true
+              }
             }
           }
         }

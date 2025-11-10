@@ -21,9 +21,12 @@
           }
         ],
         "player": {
-          "advancements": {
-            "mcmmo:meet_the_meat": {
-              "talk_to_henry": true
+          "type_specific": {
+            "type": "minecraft:player",
+            "advancements": {
+              "mcmmo:meet_the_meat": {
+                "talk_to_henry": true
+              }
             }
           }
         }
