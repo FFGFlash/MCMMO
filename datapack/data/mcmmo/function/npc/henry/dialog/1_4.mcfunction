@@ -1,5 +1,7 @@
 # * Return to henry at the end of your quest
 
+clear @s beef[custom_name={text:"Prime Firstian Beef",italic:false,color:"gold"}] 10
+
 tellraw @s [{ text: "<Henry> Marvelous! Look at that marbling... the fat distribution is " }, { text: "divine!", italic: true }]
 tellraw @s [{ text: "<Henry> Take this - \"The Tenderizer.\" A true instrument of faith." }]
 

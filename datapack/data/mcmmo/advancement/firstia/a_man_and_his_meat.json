@@ -17,12 +17,8 @@
             "items": "minecraft:beef",
             "count": 10,
             "components": {
-              "minecraft:custom_name": [
-                {
-                  "text": "Prime Firstian Beef",
-                  "italic": false,
-                  "color": "gold"
-                }
+              "minecraft:item_name": [
+                { "text": "Prime Firstian Beef", "color": "gold" }
               ]
             }
           }
@@ -30,5 +26,9 @@
       }
     },
     "return_to_henry": { "trigger": "minecraft:impossible" }
+  },
+  "rewards": {
+    "experience": 50,
+    "function": "mcmmo:npc/henry/rewards/the_tenderizer"
   }
 }
