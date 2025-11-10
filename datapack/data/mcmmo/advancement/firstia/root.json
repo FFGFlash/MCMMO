@@ -1,0 +1,30 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:grass_block"
+    },
+    "title": { "text": "Welcome to Firstia", "color": "green" },
+    "description": "Firstia is the first town of MCMMO, welcoming new players to this vast world!",
+    "background": "mcmmo:firstia",
+    "criteria": {
+      "enter_firstia": {
+        "trigger": "location",
+        "conditions": {
+          "player": {
+            "location": {
+              "x": {
+                "min": -10,
+                "max": 10
+              },
+              "z": {
+                "min": -10,
+                "max": 10
+              },
+              "dimension": "minecraft:overworld"
+            }
+          }
+        }
+      }
+    }
+  }
+}
