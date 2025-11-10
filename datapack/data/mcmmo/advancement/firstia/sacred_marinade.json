@@ -38,7 +38,7 @@
           "type_specific": {
             "type": "minecraft:player",
             "advancements": {
-              "mcmmo:sacred_marinade": {
+              "mcmmo:firstia/sacred_marinade": {
                 "talk_to_henry": true
               }
             }
