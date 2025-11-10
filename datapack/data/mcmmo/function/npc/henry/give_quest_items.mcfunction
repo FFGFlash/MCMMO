@@ -13,7 +13,7 @@ give @s wheat[ \
   custom_data={id: "mcmmo:garlic_of_glory"} \
 ] 1
 give @s wheat[ \
-  item_name={text: "Onion of Omens", color: "purple"}, \
+  item_name={text: "Onion of Omens", color: "light_purple"}, \
   item_model="mcmmo:onion_of_omens", \
   custom_data={id: "mcmmo:onion_of_omens"} \
 ] 1
