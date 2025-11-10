@@ -6,6 +6,7 @@ dialog show @s { \
   type: "minecraft:multi_action", \
   after_action: "none", \
   title: "Henry", \
+  pause: false, \
   body: [ \
     { type: "minecraft:plain_message", contents: ["Ah! A customer! Or perhaps... a disciple?"] }, \
     { type: "minecraft:plain_message", contents: ["Tell me, stranger, do you ", { text: "feel", italic: true }, " it?"] }, \

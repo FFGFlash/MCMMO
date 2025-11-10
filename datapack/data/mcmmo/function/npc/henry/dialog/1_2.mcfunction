@@ -6,6 +6,7 @@ dialog show @s { \
   type: "minecraft:confirmation", \
   after_action: "none", \
   title: "Henry", \
+  pause: false, \
   body: [ \
     { type: "minecraft:plain_message", contents: ["What am I talking about? ", { text: "Beef", italic: true }, "! The essence of life itself!"] }, \
     { type: "minecraft:plain_message", contents: ["Bring me ten slabs of Prime Firstian Beef from the roaming cattle."] }, \
