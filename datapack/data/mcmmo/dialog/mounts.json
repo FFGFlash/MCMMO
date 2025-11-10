@@ -5,6 +5,10 @@
     {
       "label": "Horse",
       "action": { "type": "run_command", "command": "summon horse" }
+    },
+    {
+      "label": "Pig",
+      "action": { "type": "run_command", "command": "summon pig" }
     }
   ],
   "exit_action": {
