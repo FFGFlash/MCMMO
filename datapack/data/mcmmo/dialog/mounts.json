@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:multi_action",
+  "title": "Mounts",
+  "actions": [
+    {
+      "label": "Horse",
+      "action": { "type": "run_command", "command": "summon horse" }
+    }
+  ],
+  "exit_action": {
+    "label": "Exit"
+  }
+}
