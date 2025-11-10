@@ -3,7 +3,7 @@
   "display": {
     "icon": { "id": "minecraft:beef" },
     "title": { "text": "A Man and His Meat", "color": "green" },
-    "description": "Henry, a strange butcher in Firstia, asks for help gathering local beef. His obsession seems harmless... for now.\nCollect 10 Prime Firstia Beef from wild cattle.",
+    "description": "Henry, a strange butcher in Firstia, asks for help gathering local beef. His obsession seems harmless... for now.\n\nCollect 10 Prime Firstia Beef from wild cattle.",
     "announce_to_chat": false
   },
   "criteria": {

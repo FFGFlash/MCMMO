@@ -3,7 +3,7 @@
   "display": {
     "icon": { "id": "minecraft:beef" },
     "title": { "text": "A Man and His Meat", "color": "green" },
-    "description": "Henry wants to recreate an ancient recipe said to \"awaken the flavor of gods.\"\nCollect Rosemary of Redemption from the Western Forest.\nCollect Garlic of Glory from the Old Mines.\nCcollect Onion of Omens from the Misty Swamp.",
+    "description": "Henry wants to recreate an ancient recipe said to \"awaken the flavor of gods.\"\n\nCollect Rosemary of Redemption from the Western Forest, Garlic of Glory from the Old Mines, and Onion of Omens from the Misty Swamp.",
     "announce_to_chat": false
   },
   "criteria": {
