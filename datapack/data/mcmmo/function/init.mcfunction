@@ -4,6 +4,10 @@ scoreboard objectives add mcmmo.menu_editor dummy "Menu Editor"
 scoreboard objectives add mcmmo.menu_list dummy "Menu Editor"
 scoreboard objectives add mcmmo.lists dummy "List Data"
 
+# NPC Dialog
+scoreboard objectives add mcmmo.npc dummy "NPC IDs"
+scoreboard objectives add mcmmo.option trigger "Option Choice Trigger"
+
 # Constants
 scoreboard players set 0 mcmmo.core 0
 scoreboard players set 1 mcmmo.core 1

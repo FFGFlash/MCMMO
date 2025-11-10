@@ -1,0 +1,34 @@
+{
+  "parent": "mcmmo:firstia/root",
+  "display": {
+    "icon": { "id": "minecraft:beef" },
+    "title": { "text": "A Man and His Meat", "color": "green" },
+    "description": "Henry, an eccentric butcher, believes beef is sacred. He's asked me to gather 10 Prime Firstian Beef. Oddly… the cows seemed aware of my approach.",
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "talk_to_henry": { "trigger": "minecraft:impossible" },
+    "gather_meat": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:beef",
+            "count": 10,
+            "components": {
+              "minecraft:custom_name": [
+                {
+                  "text": "Prime Firstian Beef",
+                  "italic": false,
+                  "color": "gold"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "return_to_henry": { "trigger": "minecraft:impossible" }
+  }
+}
