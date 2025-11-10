@@ -23,7 +23,7 @@ dialog show @s { \
     label: "Decline", \
     action: { \
       type: "minecraft:run_command", \
-      command: "trigger mcmmo.option set 0" \
+      command: "trigger mcmmo.option set -1" \
     } \
   } \
 }
