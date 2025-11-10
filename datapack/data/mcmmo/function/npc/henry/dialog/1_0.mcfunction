@@ -7,9 +7,9 @@ dialog show @s { \
   after_action: "none", \
   title: "Henry", \
   body: [ \
-    { type: "minecraft:plain_message", text: ["Ah! A customer! Or perhaps... a disciple?"] }, \
-    { type: "minecraft:plain_message", text: ["Tell me, stranger, do you ", { text: "feel", italic: true }, " it?"] }, \
-    { type: "minecraft:plain_message", text: ["That scent... that ", { text: "divine aroma", italic: true }, " of potential sizzling in the air?"] } \
+    { type: "minecraft:plain_message", contents: ["Ah! A customer! Or perhaps... a disciple?"] }, \
+    { type: "minecraft:plain_message", contents: ["Tell me, stranger, do you ", { text: "feel", italic: true }, " it?"] }, \
+    { type: "minecraft:plain_message", contents: ["That scent... that ", { text: "divine aroma", italic: true }, " of potential sizzling in the air?"] } \
   ], \
   actions: [ \
     { \
