@@ -1,5 +1,5 @@
 {
-  "parent": "mcmmo:firstia/a_man_and_his_meat",
+  "parent": "mcmmo:firstia/meet_the_meat",
   "display": {
     "icon": { "id": "minecraft:beef" },
     "title": { "text": "Sacred Marinade", "color": "green" },
