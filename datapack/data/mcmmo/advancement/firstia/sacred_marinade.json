@@ -1,0 +1,45 @@
+{
+  "parent": "mcmmo:firstia/a_man_and_his_meat",
+  "display": {
+    "icon": { "id": "minecraft:beef" },
+    "title": { "text": "A Man and His Meat", "color": "green" },
+    "description": "Henry wants to recreate an ancient recipe said to \"awaken the flavor of gods.\"\nCollect Rosemary of Redemption from the Western Forest.\nCollect Garlic of Glory from the Old Mines.\nCcollect Onion of Omens from the Misty Swamp.",
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "talk_to_henry": { "trigger": "minecraft:impossible" },
+    "gather_herbs": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:wheat",
+            "count": 1,
+            "components": {
+              "minecraft:custom_data": { "id": "mcmmo:rosemary_of_redemption" }
+            }
+          },
+          {
+            "items": "minecraft:wheat",
+            "count": 1,
+            "components": {
+              "minecraft:custom_data": { "id": "mcmmo:garlic_of_glory" }
+            }
+          },
+          {
+            "items": "minecraft:wheat",
+            "count": 1,
+            "components": {
+              "minecraft:custom_data": { "id": "mcmmo:onion_of_omens" }
+            }
+          }
+        ]
+      }
+    },
+    "return_to_henry": { "trigger": "minecraft:impossible" }
+  },
+  "rewards": {
+    "experience": 75,
+    "function": "mcmmo:npc/henry/rewards/marinade_of_insight"
+  }
+}

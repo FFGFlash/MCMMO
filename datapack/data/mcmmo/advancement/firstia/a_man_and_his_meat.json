@@ -3,9 +3,8 @@
   "display": {
     "icon": { "id": "minecraft:beef" },
     "title": { "text": "A Man and His Meat", "color": "green" },
-    "description": "Henry, an eccentric butcher, believes beef is sacred. He's asked me to gather 10 Prime Firstian Beef. Oddly… the cows seemed aware of my approach.",
-    "announce_to_chat": false,
-    "hidden": true
+    "description": "Henry, a strange butcher in Firstia, asks for help gathering local beef. His obsession seems harmless... for now.\nCollect 10 Prime Firstia Beef from wild cattle.",
+    "announce_to_chat": false
   },
   "criteria": {
     "talk_to_henry": { "trigger": "minecraft:impossible" },
@@ -17,9 +16,7 @@
             "items": "minecraft:beef",
             "count": 10,
             "components": {
-              "minecraft:item_name": [
-                { "text": "Prime Firstian Beef", "color": "gold" }
-              ]
+              "minecraft:custom_data": { "id": "mcmmo:prime_firstia_beef" }
             }
           }
         ]

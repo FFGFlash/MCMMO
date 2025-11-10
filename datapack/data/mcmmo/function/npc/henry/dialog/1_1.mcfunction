@@ -3,7 +3,7 @@
 scoreboard players enable @s mcmmo.option
 
 dialog show @s { \
-  type: "minecraft:confirmation", \
+  type: "minecraft:multi_action", \
   after_action: "none", \
   title: "Henry", \
   pause: false, \
@@ -12,18 +12,20 @@ dialog show @s { \
     { type: "minecraft:plain_message", contents: ["Bring me ten slabs of Prime Firstian Beef from the roaming cattle."] }, \
     { type: "minecraft:plain_message", contents: ["Treat them with respect. Each cut is a prayer."] } \
   ], \
-  yes: { \
-    label: "Accept", \
-    action: { \
-      type: "minecraft:run_command", \
-      command: "trigger mcmmo.option set 3" \
+  actions: [ \
+    { \
+      label: "Accept", \
+      action: { \
+        type: "minecraft:run_command", \
+        command: "trigger mcmmo.option set 3" \
+      } \
+    }, \
+    { \
+      label: "Decline", \
+      action: { \
+        type: "minecraft:run_command", \
+        command: "trigger mcmmo.option set -1" \
+      } \
     } \
-  }, \
-  no: { \
-    label: "Decline", \
-    action: { \
-      type: "minecraft:run_command", \
-      command: "trigger mcmmo.option set -1" \
-    } \
-  } \
+  ] \
 }

@@ -1,0 +1,3 @@
+execute unless entity @s[advancements={mcmmo:firstia/sacred_marinade={talk_to_henry=true}}] run return run function mcmmo:npc/henry/dialog/2_0
+execute unless entity @s[advancements={mcmmo:firstia/sacred_marinade={gather_herbs=true}}] run return run function mcmmo:npc/henry/dialog/2_1
+execute unless entity @s[advancements={mcmmo:firstia/sacred_marinade={return_to_henry=true}}] run return run function mcmmo:npc/henry/dialog/2_2
